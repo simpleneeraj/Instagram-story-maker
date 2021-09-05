@@ -1,0 +1,39 @@
+.Bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  .BottomBox {
+    display: flex;
+    justify-content: space-between;
+    // background: #00000047;
+    padding: 0.8rem;
+    gap: 1rem;
+    button {
+      flex: 1;
+      transition: 0.1s ease-in-out;
+      height: 50px;
+      width: 50px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      background: #00000066;
+      &:active {
+        transform: translateY(-3px);
+      }
+      span {
+        height: 25px;
+        width: 25px;
+        border-radius: 100px;
+        // background: rgb(9, 130, 211);
+        border: 1px solid #fff;
+      }
+    }
+  }
+}

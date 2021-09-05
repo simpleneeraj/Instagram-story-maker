@@ -1,0 +1,41 @@
+@import "./variable.scss";
+
+//======================================================//
+//===================== Light Mode =====================//
+//======================================================//
+html {
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $Medium;
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+//======================================================//
+//===================== Font Face ======================//
+//======================================================//
+
+@font-face {
+  font-family: $Medium;
+  src: url(/Helvetica/HelveticaMedium.ttf);
+}
+
+@font-face {
+  font-family: $Roman;
+  src: url(/Helvetica/HelveticaRoman.ttf);
+}
+@font-face {
+  font-family: $Light;
+  src: url(/Helvetica/HelveticaLight.ttf);
+}
+@font-face {
+  font-family: $Thin;
+  src: url(/Helvetica/HelveticaThin.ttf);
+}

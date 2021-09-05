@@ -1,0 +1,44 @@
+.Top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .TopBox {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100vw;
+    position: absolute;
+    top: 0;
+    padding: 0.4rem;
+    z-index: 2;
+    div {
+      display: grid;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        position: relative;
+        transition: 0.2s;
+        height: 40px;
+        width: 60px;
+        border-radius: 100px;
+        border: none;
+        outline: none;
+        background: rgba(0, 0, 0, 0.28);
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 600;
+        svg {
+          height: 28px;
+          width: 28px;
+          fill: #ffffff;
+          transition: 0.2s;
+        }
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.75);
+        }
+      }
+    }
+  }
+}

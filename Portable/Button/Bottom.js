@@ -4,8 +4,10 @@ import {
   Quotes_Right_Icon,
   Landscape_Icon,
   Font_Size_Icon,
+  Brush_Icon,
 } from "../Constent/Icons";
 import usePortable from "../Hooks/usePortable";
+import { debounce } from "lodash";
 
 const Bottom = () => {
   const color = "#fff";
@@ -20,6 +22,7 @@ const Bottom = () => {
     thoughtHandler,
     modelDownloadHandler,
     fontSizeHandler,
+    textEditModelHandler,
   } = usePortable();
 
   return (
@@ -35,10 +38,10 @@ const Bottom = () => {
           <button onClick={themeHandler}>
             <Landscape_Icon color={color} />
           </button>
-          <button onClick={fontSizeHandler}>
-            <Font_Size_Icon color={color} />
+          <button onClick={() => textEditModelHandler(true)}>
+            <Brush_Icon color={color} />
           </button>
-          <button onClick={() => modelDownloadHandler(true)}>
+          <button onClick={debounce(() => modelDownloadHandler(true), 500)}>
             <Download_Cloud_Icon color={color} />
           </button>
         </div>

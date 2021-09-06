@@ -66,5 +66,22 @@ const ThemesData = [
     spanBackground: "#e6e6e6",
     spanFontWeight: 500,
   },
+  //  Transparet White
+  {
+    background: "rgba(255,255,255,.8)",
+    color: "#000000",
+    spanColor: "rgba(0, 0, 0, 0.75)",
+    spanBackground: "#fff",
+    spanFontWeight: 500,
+  },
+
+  // Transparent Black
+  {
+    background: "rgba(0,0,0,.8)",
+    color: "#ffffff",
+    spanBackground: "#ffffff36",
+    spanColor: "#f1f1f1",
+    spanFontWeight: 400,
+  },
 ];
 export default ThemesData;

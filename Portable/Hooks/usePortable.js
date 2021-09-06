@@ -10,11 +10,13 @@ import {
   THEME,
   THOUGHT,
   USERIMAGE,
+  TEXTEDITMODEL,
 } from "../../Redux/reducers/portable";
 import { random } from "lodash";
 import { TwoColorBackgrounds } from "../Constent/Gradients";
 import { Thoughts_500 } from "../Constent/Thoughts/Thoughts_500";
 import ThemesData from "../Constent/Themes";
+import WebGradients from "../Constent/WebGradients";
 
 const usePortable = () => {
   //----------------------------------//
@@ -31,6 +33,7 @@ const usePortable = () => {
     fontSize,
     fontWeight,
     imagescale,
+    textEditModel,
   } = useSelector((state) => state.reducer.portable);
   //----------------------------------//
   // Dispatch Simple Handler
@@ -63,13 +66,16 @@ const usePortable = () => {
     });
   }, [thought]);
   //===================================//
-  const userImageHandler = useCallback(() => {
-    Handler(USERIMAGE, value);
-  }, [userImage]);
+  const userImageHandler = useCallback(
+    (value) => {
+      Handler(USERIMAGE, value);
+    },
+    [userImage]
+  );
   //===================================//
   const backgroundHandler = useCallback(() => {
-    const number = random(0, TwoColorBackgrounds.length - 1);
-    const background = TwoColorBackgrounds[number].GrandientValue.toString();
+    const number = random(0, WebGradients.length - 1);
+    const background = WebGradients[number].colors.toString();
     Handler(BACKGROUND, `linear-gradient(${background} )`);
     // console.log(number);
   }, [background]);
@@ -85,15 +91,13 @@ const usePortable = () => {
     [modelDownload]
   );
   //===================================//
-  const [fontSizeValue, setfontSizeValue] = useState(13);
-  const fontSizeHandler = useCallback(() => {
-    setfontSizeValue((i) => i + 1);
-    if (fontSizeValue >= 30) {
-      setfontSizeValue(13);
-    }
-    Handler(FONTSIZE, fontSizeValue);
-    // console.log(fontSizeValue);
-  }, [fontSize]);
+
+  const fontSizeHandler = useCallback(
+    (value) => {
+      Handler(FONTSIZE, value);
+    },
+    [fontSize]
+  );
   //===================================//
   const fontWeightHandler = useCallback(
     (value) => {
@@ -107,6 +111,12 @@ const usePortable = () => {
     },
     [imagescale]
   );
+  const textEditModelHandler = useCallback(
+    (value) => {
+      Handler(TEXTEDITMODEL, value);
+    },
+    [textEditModel]
+  );
 
   //----------------------------------//
   // Return Values and Handlers
@@ -118,11 +128,13 @@ const usePortable = () => {
     theme,
     background,
     thought,
+    userImage,
     template,
     modelDownload,
     fontSize,
     fontWeight,
     imagescale,
+    textEditModel,
     //----------------------------------//
     //Handlers
     //----------------------------------//
@@ -135,6 +147,7 @@ const usePortable = () => {
     fontSizeHandler,
     fontWeightHandler,
     imagescaleHandler,
+    textEditModelHandler,
   };
 };
 

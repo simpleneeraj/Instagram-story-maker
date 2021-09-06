@@ -15,7 +15,7 @@ export function useClickOutside(onClickHandler) {
         return;
       }
       onClickHandler();
-      //   console.log("Hello World");
+      console.log("Hello World");
     },
     [ref]
   );

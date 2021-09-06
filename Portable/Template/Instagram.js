@@ -1,9 +1,10 @@
 import React from "react";
+
 import usePortable from "../Hooks/usePortable";
-// import QuetosText from "../Constent/QuetosText";
 
 const Instagram = () => {
-  const { thought, theme } = usePortable();
+  const { thought, theme, fontSize, fontWeight, userImage, userImageHandler } =
+    usePortable();
   const { background, color, spanBackground, spanColor, spanFontWeight } =
     theme;
 
@@ -11,9 +12,18 @@ const Instagram = () => {
     <>
       <div className={`Instagram`}>
         <div className={`InstagramImage`}>
-          <span>
-            <img src="/image/SimpleNeeraj.png" alt="me" />
-          </span>
+          <label htmlFor="userImage">
+            <span>
+              <img src={userImage} alt="me" />
+            </span>
+            <input
+              onChange={(e) =>
+                userImageHandler(URL.createObjectURL(e.target.files[0]))
+              }
+              type="file"
+              id="userImage"
+            />
+          </label>
         </div>
         <div className={`InstagramText`}>
           <p
@@ -41,8 +51,9 @@ const Instagram = () => {
       <style jsx>
         {`
           .EditableDiv {
-            font-size: 1rem;
-            font-family: "HelveticaMedium";
+            font-size: ${fontSize}px;
+            font-weight: ${fontWeight};
+            font-family: "HelveticaRoman";
           }
           .Instagram {
             height: auto;
@@ -54,36 +65,39 @@ const Instagram = () => {
             max-width: 310px;
           }
 
-          .Instagram .InstagramImage {
+          .InstagramImage {
             display: flex;
             justify-content: center;
             align-items: center;
           }
-
-          .Instagram .InstagramImage span {
+          .InstagramImage input {
+            display: none;
+          }
+          .InstagramImage span {
             background: ${background};
-            width: 44px;
-            height: 44px;
+            width: 45px;
+            height: 45px;
             border-radius: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
-            transform: translateY(-50%);
+            margin-bottom: 10px;
+            margin-top: -20px;
           }
-
-          .Instagram .InstagramImage span img {
+          .InstagramImage span img {
             border-radius: 100px;
             width: 40px;
             height: 40px;
+            object-fit: cover;
           }
-          .Instagram .InstagramText {
+          .InstagramText {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: -10px 0;
-            padding: 0.7rem 0.4rem;
+            padding: 0.5rem 0.8rem;
           }
-          .Instagram .InstagramText p {
+          .InstagramText p {
             color: ${color};
             width: 95%;
             text-align: center;
@@ -96,14 +110,14 @@ const Instagram = () => {
             max-width: 300px;
           }
 
-          .Instagram .InstagramBottom {
+          .InstagramBottom {
             height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
           }
 
-          .Instagram .InstagramBottom div {
+          .InstagramBottom div {
             background: ${spanBackground};
             padding: 0.85rem;
             border-radius: 6px;
@@ -113,7 +127,7 @@ const Instagram = () => {
             justify-content: center;
             align-items: center;
           }
-          .Instagram .InstagramBottom div span {
+          .InstagramBottom div span {
             color: ${spanColor};
             font-weight: ${spanFontWeight};
             text-align: center;

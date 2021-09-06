@@ -1,0 +1,60 @@
+.TextModel {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+  overflow: hidden;
+}
+
+.TextModelItem {
+  width: 100%;
+  max-height: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 01);
+  border-radius: 20px 20px 0 0;
+  backdrop-filter: blur(15px);
+  transform: scale(1);
+  padding: 1rem 0.8rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  -moz-box-align: end;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: auto;
+  gap: 0.2rem;
+  p {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+}
+
+//======================================================//
+//===================== Modal Show =====================//
+//======================================================//
+
+.Active {
+  opacity: 1;
+}
+.ItemActive {
+  transform: translateY(0%);
+}
+
+//------------------------------------------------------//
+//------------------ Slider Simple Style ---------------//
+//------------------------------------------------------//
+.TextModelSlider {
+  padding: 0.35rem 0.8rem;
+  border-radius: 15px;
+
+  p {
+    font-size: 0.9rem;
+    font-family: "HelveticaRoman";
+    span {
+      opacity: 0.8;
+      font-weight: 800;
+    }
+  }
+}

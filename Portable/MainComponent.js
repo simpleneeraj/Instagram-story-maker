@@ -1,17 +1,19 @@
 import BottomButtons from "./Button/Bottom";
 import Templates from "./Template/Templates";
-import Model from "./Button/Model";
+import DownloadModel from "./Models/DownloadModel";
 import usePortable from "./Hooks/usePortable";
+import TextModel from "./Models/TextModel";
 
 const MainComponent = () => {
-  const { modelDownload } = usePortable();
+  const { modelDownload, textEditModel } = usePortable();
 
   return (
     <>
       <div>
         <Templates />
         <BottomButtons />
-        {modelDownload ? <Model /> : null}
+        {modelDownload ? <DownloadModel /> : null}
+        {textEditModel ? <TextModel /> : null}
       </div>
     </>
   );

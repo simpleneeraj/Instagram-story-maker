@@ -7,6 +7,7 @@ export const MODELDOWNLOAD = `MODELDOWNLOAD`;
 export const FONTSIZE = `FONTSIZE`;
 export const FONTWEGHT = `FONTWEGHT`;
 export const IMAGESCALE = `IMAGESCALE`;
+export const TEXTEDITMODEL = `TEXTEDITMODEL`;
 
 const initialState = {
   theme: {
@@ -20,13 +21,15 @@ const initialState = {
     content: "If you want to achieve greatness stop asking for permission.",
     author: "simpleNeeraj",
   },
-  userImage: `.///.///`,
-  background: `linear-gradient(135deg, #ee0979, #ff6a00)`,
+
+  userImage: `/image/SimpleNeeraj.png`,
+  background: `linear-gradient(#f2709c,#ff9472 )`,
   template: 0,
   modelDownload: false,
-  fontSize: 13,
+  fontSize: 20,
   fontWeight: 500,
   imagescale: 2,
+  textEditModel: false,
 };
 
 const portable = (state = initialState, action) => {
@@ -75,6 +78,11 @@ const portable = (state = initialState, action) => {
       return {
         ...state,
         imagescale: action.payload,
+      };
+    case TEXTEDITMODEL:
+      return {
+        ...state,
+        textEditModel: action.payload,
       };
     default:
       return state;

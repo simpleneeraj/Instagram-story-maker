@@ -6,7 +6,7 @@
   .BottomBox {
     display: flex;
     justify-content: space-between;
-    // background: #00000047;
+    background: #0000;
     padding: 0.8rem;
     gap: 1rem;
     button {
@@ -23,7 +23,7 @@
       align-items: center;
       position: relative;
       cursor:default;
-      background: #00000066;
+      // background: #00000066;
       &:active {
         transform: translateY(-3px);
       }

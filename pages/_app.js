@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Provider store={store}>
-        <ChakraProvider>
+        <ChakraProvider resetCSS={true}>
           <Metadata />
           <Component {...pageProps} />
         </ChakraProvider>

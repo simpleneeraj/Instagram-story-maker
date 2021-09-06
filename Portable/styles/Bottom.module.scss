@@ -22,7 +22,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      cursor: pointer;
+      cursor:default;
       background: #00000066;
       &:active {
         transform: translateY(-3px);

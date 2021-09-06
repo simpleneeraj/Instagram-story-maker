@@ -18,6 +18,7 @@ import { Thoughts_500 } from "../Constent/Thoughts/Thoughts_500";
 import ThemesData from "../Constent/Themes";
 import WebGradients from "../Constent/WebGradients";
 
+import WebGradients from "../Constent/WebGradients";
 const usePortable = () => {
   //----------------------------------//
   // Redux Store Values

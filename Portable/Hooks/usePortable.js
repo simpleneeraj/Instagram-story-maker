@@ -16,6 +16,7 @@ import { TwoColorBackgrounds } from "../Constent/Gradients";
 import { Thoughts_500 } from "../Constent/Thoughts/Thoughts_500";
 import ThemesData from "../Constent/Themes";
 
+import WebGradients from "../Constent/WebGradients";
 const usePortable = () => {
   //----------------------------------//
   // Redux Store Values
@@ -68,8 +69,8 @@ const usePortable = () => {
   }, [userImage]);
   //===================================//
   const backgroundHandler = useCallback(() => {
-    const number = random(0, TwoColorBackgrounds.length - 1);
-    const background = TwoColorBackgrounds[number].GrandientValue.toString();
+    const number = random(0, WebGradients.length - 1);
+    const background = WebGradients[number].colors.toString();
     Handler(BACKGROUND, `linear-gradient(${background} )`);
     // console.log(number);
   }, [background]);

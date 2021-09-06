@@ -9,6 +9,7 @@
   box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition: 0.3s ease-in-out;
   overflow: hidden;
+  cursor:default;
 }
 
 .ModelItem {
@@ -47,6 +48,7 @@
     font-family: "HelveticaMedium";
     background: none;
     transition: 0.2s ease-in;
+    cursor:default;
   }
   #Active {
     transition: 0.2s ease-in;
@@ -68,6 +70,7 @@
     align-items: center;
     flex-direction: column;
     gap: 0.2rem;
+    cursor:default;
     p {
       font-family: "HelveticaMedium";
       font-size: 0.8rem;
@@ -90,5 +93,6 @@
     font-family: "HelveticaMedium";
     display: grid;
     place-content: center;
+    cursor:default;
   }
 }
